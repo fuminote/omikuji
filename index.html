@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>おみくじ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div>
+
+        <p>今年の運勢を占いましょう</p>
+
+        <div style="margin: 10px 0;">
+            <img src="img/torii.png" alt="" width="550px">
+        </div>
+
+        <!-- <button id="btn" class="hiku">
+            おみくじを引く
+        </button> -->
+
+        <a href="#" class="btn-circle-border-double" id="btn3">
+            おみくじを引く<img src="img/daruma.png" width="30px" alt="#">
+        </a>
+
+        <div id="kekkaBack" class="kekka-back">
+            <p>チャララ～ン<br>あなたの今年の運勢は</p>
+            <img id="gazo" alt="">
+            <!-- <a href="#" id="reload" class="reload" onclick="window.location.reload();">
+                <img src="img/tora-omikuji_og.png" alt="#">
+            </a> -->
+            <button id="reload" class="reload" onclick="window.location.reload();">
+                もう１回ひく
+            </button>
+        </div>
+
+        <!-- <div>
+            <img id="gazo" src="img/daikichi.png" alt="">
+        </div> -->
+
+
+        <script>
+            // let kujis = ["大吉", "中吉", "吉", "小吉", "末吉", "凶"];
+
+            // let kujisGazo = ["img/daikichi.png", "img/tyukichi.png", "img/kichi.png", "img/shokichi.png", "img/suekichi.png", "img/kyou.png"];
+            let kujisGazo = ["daikichi", "tyukichi", "kichi", "shokichi", "suekichi", "kyou"];
+
+            // document.getElementById("gazo").src = ["img/kichi.png", "img/kyo.png"];
+
+            const gazo = document.getElementById("gazo")
+
+            document.getElementById("btn3").addEventListener("click", function () {
+                document.getElementById("kekkaBack").classList.add("active");
+                let kuji = Math.floor(Math.random() * kujisGazo.length);
+                // gazo.src = kujisGazo[kuji];
+                gazo.src = "img/" + kujisGazo[kuji] + ".png";
+                gazo.classList.add("fuwa");
+                setTimeout(function () {
+                    document.getElementById("reload").style.display = "block";
+                }, 3000);
+            });
+        </script>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+@charset "utf-8";
+
+body {
+    background-color: rgb(166, 237, 95);
+    font-family: 'Noto Sans JP', sans-serif;
+    text-align: center;
+}
+
+p {
+    font-size: 2em;
+    /* text-align: center; */
+    margin-top: 50px;
+}
+
+/* .hiku {
+    width: 200px;
+    padding: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+} */
+
+.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(240, 255, 164);
+}
+
+.kekka-back img {
+    position: absolute;
+    /* padding-top: 50px; */
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    /* transform: scale(2); */
+    transform: translate(-50%, -50%) scale(2) rotate(900deg);
+}
+
+.kekka-back img.fuwa {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    /* transform: none; */
+    transition: 3s;
+}
+
+.reload {
+    display: none;
+    position: fixed;
+    bottom: 10%;
+    width: 300px;
+    left: 50%;
+    background-color: #f5fafe;
+    color: #2a2489;
+    font-size: 1.2rem;
+    transform: translate(-50%, -50%);
+    border: double 8px #f93d3d;
+    padding: 10px;
+}
+
+/* おみくじを引くサークル */
+.btn-circle-border-double {
+    display: inline-block;
+    text-decoration: none;
+    /* color: #668ad8; */
+    color: #2a2489;
+    font-size: 1.2rem;
+    width: 180px;
+    height: 180px;
+    line-height: 180px;
+    border-radius: 50%;
+    /* border: double 4px #668ad8; */
+    border: double 16px #f5fafe;
+    text-align: center;
+    overflow: hidden;
+    transition: .6s;
+    margin: 0 auto;
+}
+
+.btn-circle-border-double:hover {
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+}
